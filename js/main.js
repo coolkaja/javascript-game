@@ -70,7 +70,7 @@ function MakeMonster(xp, minimumDifficulty, maximumDifficulty){
 }
 
 monsters = {
-	slime = {
+	slime : {
 		//fluff
 		name: "Slime",
 		description: "The green goo wobbles menacingly.",
@@ -87,7 +87,7 @@ monsters = {
 		defense: 1.5,
 		evasion: 0.5
 	},
-	mosquittoSwarm = {
+	mosquittoSwarm : {
 		//fluff
 		name: "Mosquitto swarm",
 		description: "Noo, not the mosquittos!",
@@ -104,7 +104,7 @@ monsters = {
 		defense: 0.5,
 		evasion: 1.5
 	},
-	rat = {
+	rat : {
 		//fluff
 		name: "Rat",
 		description: "It's glittering eyes look positively evil.",
@@ -121,7 +121,7 @@ monsters = {
 		defense: 0.5,
 		evasion: 1.5
 	},
-	LivingBrick = {
+	LivingBrick : {
 		//fluff
 		name: "Brick",
 		description: "OH NO! It's a brick!!!!",
