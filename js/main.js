@@ -137,7 +137,7 @@ monsters = {
 		accuracy: 1,
 		defense: 2,
 		evasion: 0.5
-	};
+	}
 };
 
 console.log(MakeMonster(0, 0, 5));
