@@ -86,7 +86,7 @@ monsters = {
 		accuracy: 1.5,
 		defense: 1.5,
 		evasion: 0.5
-	};
+	},
 	mosquittoSwarm = {
 		//fluff
 		name: "Mosquitto swarm",
@@ -103,7 +103,7 @@ monsters = {
 		accuracy: 1.5,
 		defense: 0.5,
 		evasion: 1.5
-	};
+	},
 	rat = {
 		//fluff
 		name: "Rat",
@@ -120,7 +120,7 @@ monsters = {
 		accuracy: 1.5,
 		defense: 0.5,
 		evasion: 1.5
-	};
+	},
 	LivingBrick = {
 		//fluff
 		name: "Brick",
