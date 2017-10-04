@@ -54,16 +54,21 @@ function MakeDungeon(level){
 }
 
 function MakeMonster(xp, minimumDifficulty, maximumDifficulty){
-	var options = [];
+	var monsters = Object.values(monsters);
+	options = [];
 	var choice;
-	for(var key in monsters){
-		if (key.difficulty >= minimumDifficulty && key.difficulty <= maximumDifficulty){
-			options[options.length-1] = key;
+	
+	//filter for the monsters that fall within the correct difficulty
+	for (i = 0; i < options.length; i++){
+		if (monsters[i].difficulty >= minimumDifficulty && monsters[i].difficulty <= maximumDifficulty ){
+			 options.push(monsters[i])
 		}
 	}
-	if (options == undefined ){
+	
+	//return slime if no options are found
+	if (options.length	== undefined ){ 
 		choice = monsters.slime;
-	}else{
+	}else{ //return a random monster
 		choice = options[Math.round(Math.random() * options.length)]
 	}
 	return choice;
