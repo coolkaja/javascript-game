@@ -48,7 +48,7 @@ function MakeDungeon(level){
 	
 	//populate dungeon rooms
 	for(i = 0; i < dungeon.totalRooms; i +=1 ){
-		dungeon.room[i] = "monster";
+		dungeon.room[i] = MakeMonster(level, level * 0.75, level * 1.25);
 	}
 	return dungeon ;
 }
@@ -175,7 +175,4 @@ monsters = {
 	}
 };
 
-console.log(MakeMonster(1, 1, 3));
-console.log(MakeMonster(10, 1, 1));
-console.log(MakeMonster(321, 2, 5));
-
+MakeDungeon(5);
