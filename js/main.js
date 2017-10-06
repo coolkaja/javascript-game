@@ -161,5 +161,5 @@ monsters = {
 
 console.log(MakeMonster(1, 1, 3));
 console.log(MakeMonster(10, 1, 1));
-console.log(MakeMonster(1, 2, 5));
+console.log(MakeMonster(321, 2, 5));
 
