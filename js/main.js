@@ -84,13 +84,13 @@ function MakeMonster(level, minimumDifficulty, maximumDifficulty){
 	
 	//create a new object with the data of the chosen monster
 	monster = {
-		name: Math.round(choice.name * monsterLevel),
-		description: Math.round(choice.description * monsterLevel),
-		attackText: Math.round(choice.attackText * monsterLevel),
-		deathText: Math.round(choice.deathText * monsterLevel),
+		name: choice.name,
+		description: choice.description,
+		attackText: choice.attackText,
+		deathText: choice.deathText,
 		
 		//atributes
-		difficulty: Math.round(choice.difficulty * monsterLevel),
+		difficulty: choice.difficulty,
 		
 		//core attribute multipliers become core stats in the constructor
 		health: Math.round(choice.health * monsterLevel),
