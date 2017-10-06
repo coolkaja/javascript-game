@@ -57,6 +57,7 @@ function MakeMonster(level, minimumDifficulty, maximumDifficulty){
 	var keys = Object.values(monsters);
 	var options = [];
 	var choice = {};
+	var monster = {};
 	var monsterLevel = 0;
 	
 	//filter for the monsters that fall within the correct difficulty
@@ -74,18 +75,37 @@ function MakeMonster(level, minimumDifficulty, maximumDifficulty){
 	//pick a random monster from the options
 	choice = options[Math.floor(Math.random() * options.length)];
 	
+	//create a new object with the data of the chosen monster
+	monster = {
+		name: choice.name,
+		description: choice.description,
+		attackText: choice.attackText,
+		deathText: choice.deathText,
+		
+		//atributes
+		difficulty: choice.difficulty,
+		
+		//core attribute multipliers become core stats in the constructor
+		health: choice.health,
+		intelligence: choice.intelligence,
+		damage: choice.damage,
+		accuracy: choice.accuracy,
+		defense: choice.defense,
+		evasion: choice.evasion
+	}
+	
 	//scale monster stats with level;
 	monsterLevel = level/choice.difficulty;
 	
 	//vary monster level by 20%
 	monsterLevel += Math.round((Math.random() * 0.4 -0.1) * monsterLevel)
 	
-	var val =  Object.values(choice)
+	var val =  Object.values(monster)
 	for(i = val.length-6; i < val.length; i += 1){
 		val[i] = val[i] * monsterLevel;
 	}
 	
-	return choice;
+	return monster;
 }
 
 monsters = {
