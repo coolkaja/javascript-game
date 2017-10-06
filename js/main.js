@@ -53,10 +53,11 @@ function MakeDungeon(level){
 	return dungeon ;
 }
 
-function MakeMonster(xp, minimumDifficulty, maximumDifficulty){
+function MakeMonster(level, minimumDifficulty, maximumDifficulty){
 	var keys = Object.values(monsters);
-	options = [];
-	var choice;
+	var options = [];
+	var choice = {};
+	var monsterLevel = 0;
 	
 	//filter for the monsters that fall within the correct difficulty
 	for (i = 0; i < keys.length; i++){
@@ -64,9 +65,27 @@ function MakeMonster(xp, minimumDifficulty, maximumDifficulty){
 			 options.push(keys[i])
 		}
 	}
-	var rand = Math.floor(Math.random() * options.length-1)
-	console.log(rand);
-	return options[rand];
+	
+	//default to slime if no suitable monsters is found.
+	if (options[0] == undefined) {
+	    options[0] = monsters.slime();
+	}
+	
+	//pick a random monster from the options
+	choice = options[Math.floor(Math.random() * options.length)];
+	
+	//scale monster stats with level;
+	monsterLevel = level/choice.difficulty;
+	
+	//vary monster level by 20%
+	monsterLevel += Math.round((Math.random() * 0.4 -0.1) * monsterLevel)
+	
+	var val =  Object.values(choice)
+	for(i = val.length-6; i < val.length; i += 1){
+		val[i] = val[i] * monsterLevel;
+	}
+	
+	return choice;
 }
 
 monsters = {
