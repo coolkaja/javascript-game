@@ -79,26 +79,26 @@ function MakeMonster(level, minimumDifficulty, maximumDifficulty){
 	monsterLevel = level/choice.difficulty;
 	
 	//vary monster level by 20%
-	monsterLevel += Math.round((Math.random() * 0.4 -0.1) * monsterLevel)
+	monsterLevel += (Math.random() * 0.4 -0.1) * monsterLevel;
 	
 	
 	//create a new object with the data of the chosen monster
 	monster = {
-		name: choice.name * monsterLevel,
-		description: choice.description * monsterLevel,
-		attackText: choice.attackText * monsterLevel,
-		deathText: choice.deathText * monsterLevel,
+		name: Math.round(choice.name * monsterLevel),
+		description: Math.round(choice.description * monsterLevel),
+		attackText: Math.round(choice.attackText * monsterLevel),
+		deathText: Math.round(choice.deathText * monsterLevel),
 		
 		//atributes
-		difficulty: choice.difficulty * monsterLevel,
+		difficulty: Math.round(choice.difficulty * monsterLevel),
 		
 		//core attribute multipliers become core stats in the constructor
-		health: choice.health * monsterLevel,
-		intelligence: choice.intelligence * monsterLevel,
-		damage: choice.damage * monsterLevel,
-		accuracy: choice.accuracy * monsterLevel,
-		defense: choice.defense * monsterLevel,
-		evasion: choice.evasion * monsterLevel
+		health: Math.round(choice.health * monsterLevel),
+		intelligence: Math.round(choice.intelligence * monsterLevel),
+		damage: Math.round(choice.damage * monsterLevel),
+		accuracy: Math.round(choice.accuracy * monsterLevel),
+		defense: Math.round(choice.defense * monsterLevel),
+		evasion: Math.round(choice.evasion * monsterLevel)
 	}
 	
 	return monster;
