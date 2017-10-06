@@ -69,7 +69,7 @@ function MakeMonster(level, minimumDifficulty, maximumDifficulty){
 	
 	//default to slime if no suitable monsters is found.
 	if (options[0] == undefined) {
-	    options[0] = monsters.slime();
+	    options[0] = monsters.slime;
 	}
 	
 	//pick a random monster from the options
@@ -174,5 +174,3 @@ monsters = {
 		evasion: 0.5
 	}
 };
-
-MakeDungeon(5);
