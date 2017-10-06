@@ -159,6 +159,7 @@ monsters = {
 	}
 };
 
-console.log(MakeMonster(0, 0, 5));
-console.log(MakeMonster(0, 1, 1));
-console.log(MakeMonster(0, 6, 8));
+console.log(MakeMonster(1, 1, 3));
+console.log(MakeMonster(10, 1, 1));
+console.log(MakeMonster(1, 2, 5));
+
