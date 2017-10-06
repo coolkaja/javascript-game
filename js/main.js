@@ -64,8 +64,7 @@ function MakeMonster(xp, minimumDifficulty, maximumDifficulty){
 			 options.push(keys[i])
 		}
 	}
-	return options;
-	
+	return options[Math.floor(Math.random() * options.length-1)];
 }
 
 monsters = {
